@@ -1,0 +1,117 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with fp 96 and seed -829853089086945417 with 1 worker on 8 cores with 3641MB heap and 64MB offheap memory [pid: 20633] (Mac OS X 10.16 x86_64, Oracle Corporation 10.0.1 x86_64, MSBDiskFPSet, DiskStateQueue).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file /Users/thenewmac/Projects/git/tla_practice/SimpleProgram.tla
+Parsing file /private/var/folders/r5/hpwldf6n2ng49cgjp87nllzm0000gn/T/TLC.tla
+Parsing file /private/var/folders/r5/hpwldf6n2ng49cgjp87nllzm0000gn/T/Integers.tla
+Parsing file /private/var/folders/r5/hpwldf6n2ng49cgjp87nllzm0000gn/T/Naturals.tla
+Parsing file /private/var/folders/r5/hpwldf6n2ng49cgjp87nllzm0000gn/T/Sequences.tla
+Parsing file /private/var/folders/r5/hpwldf6n2ng49cgjp87nllzm0000gn/T/FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Integers
+Semantic processing of module SimpleProgram
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2021-01-11 22:34:06)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 1 distinct state generated at 2021-01-11 22:34:06.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2114:1 @!@!@
+Deadlock reached.
+@!@!@ENDMSG 2114 @!@!@
+@!@!@STARTMSG 2121:1 @!@!@
+The behavior up to this point is:
+@!@!@ENDMSG 2121 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+1: <Initial predicate>
+/\ i = 0
+/\ pc = "start"
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+2: <Pick line 7, col 9 to line 9, col 25 of module SimpleProgram>
+/\ i = 0
+/\ pc = "middle"
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+3: <Add1 line 11, col 9 to line 13, col 23 of module SimpleProgram>
+/\ i = 1
+/\ pc = "done"
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2201:0 @!@!@
+The coverage statistics at 2021-01-11 22:34:06
+@!@!@ENDMSG 2201 @!@!@
+@!@!@STARTMSG 2773:0 @!@!@
+<Init line 5, col 1 to line 5, col 4 of module SimpleProgram>: 2:2
+@!@!@ENDMSG 2773 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 5, col 9 to line 5, col 33 of module SimpleProgram: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<Pick line 7, col 1 to line 7, col 4 of module SimpleProgram>: 1001:2002
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 7, col 12 to line 7, col 23 of module SimpleProgram: 1007
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 7, col 12 to line 7, col 13 of module SimpleProgram: 1005
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 8, col 12 to line 8, col 25 of module SimpleProgram: 2002
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 8, col 19 to line 8, col 25 of module SimpleProgram: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 9, col 12 to line 9, col 25 of module SimpleProgram: 2002
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<Add1 line 11, col 1 to line 11, col 4 of module SimpleProgram>: 1001:1002
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 11, col 12 to line 11, col 24 of module SimpleProgram: 2006
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 11, col 12 to line 11, col 13 of module SimpleProgram: 1004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 12, col 12 to line 12, col 21 of module SimpleProgram: 1002
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 13, col 12 to line 13, col 23 of module SimpleProgram: 1002
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2202:0 @!@!@
+End of statistics.
+@!@!@ENDMSG 2202 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(3) at 2021-01-11 22:34:06: 2,003 states generated (192,596 s/min), 2,003 distinct states found (192,596 ds/min), 1,000 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2199:0 @!@!@
+2003 states generated, 2003 distinct states found, 1000 states left on queue.
+@!@!@ENDMSG 2199 @!@!@
+@!@!@STARTMSG 2194:0 @!@!@
+The depth of the complete state graph search is 3.
+@!@!@ENDMSG 2194 @!@!@
+@!@!@STARTMSG 2268:0 @!@!@
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 31 and the 95th percentile is 1).
+@!@!@ENDMSG 2268 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 629ms at (2021-01-11 22:34:06)
+@!@!@ENDMSG 2186 @!@!@
