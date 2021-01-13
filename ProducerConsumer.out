@@ -1,0 +1,228 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with fp 13 and seed -2839690123019411192 with 1 worker on 8 cores with 3641MB heap and 64MB offheap memory [pid: 14992] (Mac OS X 10.16 x86_64, Oracle Corporation 10.0.1 x86_64, MSBDiskFPSet, DiskStateQueue).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file /Users/thenewmac/Projects/git/tla_practice/ProducerConsumer.tla
+Parsing file /private/var/folders/r5/hpwldf6n2ng49cgjp87nllzm0000gn/T/TLC.tla
+Parsing file /private/var/folders/r5/hpwldf6n2ng49cgjp87nllzm0000gn/T/Naturals.tla
+Parsing file /private/var/folders/r5/hpwldf6n2ng49cgjp87nllzm0000gn/T/Sequences.tla
+Parsing file /private/var/folders/r5/hpwldf6n2ng49cgjp87nllzm0000gn/T/FiniteSets.tla
+Parsing file /private/var/folders/r5/hpwldf6n2ng49cgjp87nllzm0000gn/T/Integers.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module Integers
+Semantic processing of module ProducerConsumer
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2021-01-12 22:00:55)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 1 distinct state generated at 2021-01-12 22:00:56.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2193:0 @!@!@
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 3.0E-18
+@!@!@ENDMSG 2193 @!@!@
+@!@!@STARTMSG 2201:0 @!@!@
+The coverage statistics at 2021-01-12 22:00:56
+@!@!@ENDMSG 2201 @!@!@
+@!@!@STARTMSG 2773:0 @!@!@
+<Init line 27, col 1 to line 27, col 4 of module ProducerConsumer>: 1:1
+@!@!@ENDMSG 2773 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 27, col 9 to line 29, col 29 of module ProducerConsumer: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<Next line 78, col 1 to line 78, col 4 of module ProducerConsumer>: 7:14
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 57, col 4 to line 57, col 19 of module ProducerConsumer: 14
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 57, col 4 to line 57, col 4 of module ProducerConsumer: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 57, col 13 to line 57, col 19 of module ProducerConsumer: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 50, col 18 to line 50, col 42 of module ProducerConsumer: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 51, col 37 to line 51, col 49 of module ProducerConsumer: 7
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 51, col 37 to line 51, col 37 of module ProducerConsumer: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 51, col 43 to line 51, col 49 of module ProducerConsumer: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 51, col 27 to line 51, col 34 of module ProducerConsumer: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 59, col 10 to line 59, col 37 of module ProducerConsumer: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 59, col 10 to line 59, col 25 of module ProducerConsumer: 7
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 59, col 29 to line 59, col 37 of module ProducerConsumer: 7
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 60, col 10 to line 60, col 46 of module ProducerConsumer: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 45, col 17 to line 45, col 22 of module ProducerConsumer: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 46, col 19 to line 46, col 55 of module ProducerConsumer: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 47, col 19 to line 47, col 35 of module ProducerConsumer: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 61, col 22 to line 61, col 22 of module ProducerConsumer: 5
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 62, col 10 to line 62, col 37 of module ProducerConsumer: 9
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 62, col 10 to line 62, col 25 of module ProducerConsumer: 7
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 62, col 29 to line 62, col 37 of module ProducerConsumer: 7
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 39, col 15 to line 39, col 41 of module ProducerConsumer: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 40, col 15 to line 40, col 39 of module ProducerConsumer: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 63, col 15 to line 63, col 15 of module ProducerConsumer: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 78, col 41 to line 78, col 41 of module ProducerConsumer: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 78, col 44 to line 78, col 44 of module ProducerConsumer: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 78, col 27 to line 78, col 34 of module ProducerConsumer: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 79, col 18 to line 79, col 53 of module ProducerConsumer: 7
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 66, col 4 to line 66, col 19 of module ProducerConsumer: 15
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 66, col 4 to line 66, col 4 of module ProducerConsumer: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 66, col 13 to line 66, col 19 of module ProducerConsumer: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 67, col 4 to line 67, col 10 of module ProducerConsumer: 7
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 68, col 10 to line 68, col 27 of module ProducerConsumer: 13
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 68, col 10 to line 68, col 20 of module ProducerConsumer: 7
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 68, col 24 to line 68, col 27 of module ProducerConsumer: 7
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 69, col 10 to line 69, col 41 of module ProducerConsumer: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 70, col 10 to line 70, col 28 of module ProducerConsumer: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 45, col 17 to line 45, col 22 of module ProducerConsumer: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 46, col 19 to line 46, col 55 of module ProducerConsumer: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 47, col 19 to line 47, col 35 of module ProducerConsumer: 4
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 71, col 22 to line 71, col 22 of module ProducerConsumer: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 72, col 10 to line 72, col 27 of module ProducerConsumer: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 72, col 10 to line 72, col 20 of module ProducerConsumer: 7
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 72, col 24 to line 72, col 27 of module ProducerConsumer: 7
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 39, col 15 to line 39, col 41 of module ProducerConsumer: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 40, col 15 to line 40, col 39 of module ProducerConsumer: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 73, col 15 to line 73, col 15 of module ProducerConsumer: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 80, col 41 to line 80, col 41 of module ProducerConsumer: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 80, col 27 to line 80, col 34 of module ProducerConsumer: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 81, col 18 to line 81, col 36 of module ProducerConsumer: 7
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 81, col 18 to line 81, col 32 of module ProducerConsumer: 6
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<NoDeadLock line 84, col 1 to line 84, col 10 of module ProducerConsumer>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 84, col 15 to line 84, col 48 of module ProducerConsumer: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<QueueOK line 50, col 1 to line 50, col 7 of module ProducerConsumer>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 50, col 12 to line 51, col 49 of module ProducerConsumer: 8
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2202:0 @!@!@
+End of statistics.
+@!@!@ENDMSG 2202 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(6) at 2021-01-12 22:00:56: 15 states generated (1,250 s/min), 8 distinct states found (666 ds/min), 0 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2199:0 @!@!@
+15 states generated, 8 distinct states found, 0 states left on queue.
+@!@!@ENDMSG 2199 @!@!@
+@!@!@STARTMSG 2194:0 @!@!@
+The depth of the complete state graph search is 6.
+@!@!@ENDMSG 2194 @!@!@
+@!@!@STARTMSG 2268:0 @!@!@
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 2 and the 95th percentile is 2).
+@!@!@ENDMSG 2268 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 726ms at (2021-01-12 22:00:56)
+@!@!@ENDMSG 2186 @!@!@
