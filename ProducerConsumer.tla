@@ -1,11 +1,11 @@
 ---- MODULE ProducerConsumer ----
 
-\* simple model is a queue with a certain ttl set on it.
-\* it will be deleted after a certain amount of time has passed where it is unused.
-\* we can have at least 1 producer, and 1 consumer on the queue.
-\* a consumer can consumer from the queue, or remove things from the queue if its not empty
-\* a producer can put something onto the queue if it's not full.
-\* the producer and consumer need to wait for each other
+\* states of a queue with a queue ttl set:
+\* its in an ok/active state = consumer is connected
+\* it dne = consumer is not connected and queue ttl is expired.
+\* it is redeclared => redeclaration is something that is external to the base queue behavior.
+\* the third state of the queue would be the consumer is not connected, but the queue ttl has not yet expired.
+\* In this case, if there is a consumer thread waiting in the waitset, we can assume its still conected to the queue.
 \* using https://github.com/lemmy/BlockingQueue/blob/master/BlockingQueue.tla as a template for producers, consumers, queues
 
 
@@ -18,7 +18,11 @@ ASSUME Assumption ==
        /\ Consumer # {}                      (* at least one consumer *)
        /\ Producer \intersect Consumer = {} (* no thread is both consumer and producer *)
        /\ QueueSize \in (Nat \ {0})         (* buffer capacity is at least 1 *)
-VARIABLES timeNoConsumer, queueBuffer, waitSet
+       /\ QueueTTL \in (Nat \ {0})          (* Queue ttl needs to be greater than 1 *)
+
+VARIABLES timeNoConsumer, queueBuffer, waitSet, conState
+(* timeNoConsumer is the amount of time passed without the consumer being connected to the queue*)
+vars == <<queueBuffer, waitSet>>
 
 (**************************************)
 (* The initial state of the system *)
@@ -27,7 +31,10 @@ VARIABLES timeNoConsumer, queueBuffer, waitSet
 Init == /\ queueBuffer = <<>>
         /\ waitSet = {} 
         /\ timeNoConsumer = 0
-(* There is nothing in the queue, and the waitSet is empty*)
+        /\ conState = "connected"
+(* The queue buffer is empty, so nothing is yet in the queue. *)
+(* The wait set is also empty. *)
+(* We start off the timer for no consumer connected, assume that the consumer starts off as being connected to the queue *)
 
 RunningThreads == (Producer \cup Consumer) \ waitSet
 
@@ -35,23 +42,28 @@ RunningThreads == (Producer \cup Consumer) \ waitSet
 (* action items*)
 (****************)
 
-(* Borrowing this *)
+(* Borrowing this. If a consumer or a producer thread cannot take action, they must wait *)
 Wait(t) == /\ waitSet' = waitSet \cup {t}
+           /\ IF t \in Consumer 
+              THEN conState' = "!connected" 
+              ELSE UNCHANGED conState
            /\ UNCHANGED <<queueBuffer>>
 
-(* Borrowing this *)
+(* Borrowing this. once a put or get action is done, the other threads need to be notified. *)
 NotifyOther(t) == 
           LET S == IF t \in Producer THEN waitSet \ Producer ELSE waitSet \ Consumer
           IN IF S # {}
              THEN \E x \in S : waitSet' = waitSet \ {x}
              ELSE UNCHANGED waitSet
 
-\* the queue is still ok if the queue ttl is not expired. or if we still have a consumer running for the queue.        
-QueueOK == /\ \/ timeNoConsumer < QueueTTL
-              \/ \E c \in Consumer: c \in waitSet
-
-\* a producer thread can put something on the queue, if the queue exists, meaning the queueTTL did not expire
-\* and the queue is not full.
+(* Determine if the queue is in a 'good' state *)
+(* TTL must not be expired, the consumer must be connected *)
+(* if the consumer is waiting and the TTL is not expired, then the queue is still valid *)
+QueueOK == /\ \/ /\ timeNoConsumer < QueueTTL 
+                 /\ conState = "connected"           
+              \/ /\ \E c \in Consumer: c \in waitSet 
+                 /\ timeNoConsumer < QueueTTL
+              \/ timeNoConsumer < QueueTTL
 
 Put(t, d) ==
 /\ t \notin waitSet 
@@ -67,7 +79,6 @@ Get(t) ==
 /\ QueueOK
 /\ \/ /\ queueBuffer # <<>>
       /\ queueBuffer' = Tail(queueBuffer)
-      /\ timeNoConsumer' = 0
       /\ NotifyOther(t)
    \/ /\ queueBuffer = <<>>
       /\ Wait(t)
@@ -75,12 +86,16 @@ Get(t) ==
 (**************************************)
 (* The next state of the system should allow the producer to add something, and consumer to consume something *)
 (**************************************)
-Next == /\ \/ /\ \E p \in Producer: Put(p, p)
-              /\ timeNoConsumer' = timeNoConsumer + 1
-           \/ /\ \E c \in Consumer: Get(c)
-              /\ timeNoConsumer' = 0 \* once we can consume from the queue, we reset to 0
+Next == /\ \/ /\ \E p \in Producer: Put(p, p) 
+              /\ conState' = "!connected"          
+              /\ timeNoConsumer' = timeNoConsumer + 1    
+           \/ /\ \E c \in Consumer: Get(c) 
+              /\ conState' = "connected"
+              /\ timeNoConsumer' = 0 
 
 (* borrowing this because TLC will always check for deadlocks *)
 NoDeadLock == waitSet # (Producer \cup Consumer)
+
+THEOREM Init /\ [][Next]_vars => []NoDeadLock
 
 ============================================================================================================

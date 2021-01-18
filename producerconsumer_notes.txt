@@ -1,0 +1,36 @@
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2021-01-17 23:23:14.
+Deadlock reached.
+The behavior up to this point is:
+1: <Initial predicate>
+/\ timeNoConsumer = 0
+/\ conState = "connected"
+/\ waitSet = {}
+/\ queueBuffer = <<>>
+2: <Next line 89, col 9 to line 92, col 36 of module ProducerConsumer>
+/\ timeNoConsumer = 1
+/\ conState = "!connected"
+/\ waitSet = {}
+/\ queueBuffer = <<p1>>
+3: <Next line 89, col 9 to line 92, col 36 of module ProducerConsumer>
+/\ timeNoConsumer = 2
+/\ conState = "!connected"
+/\ waitSet = {}
+/\ queueBuffer = <<p1, p1>>
+The coverage statistics at 2021-01-17 23:23:14
+
+>>> We reach this deadlock with 1 producer, 1 consumer, a queue size of 2, and a queuettl of 2.
+Even with a queuettl of 3, the system still has a trace indicating that the consumer thread did not have a chance to take anything out of the queue.
+
+Changing the config to:
+CONSTANTS
+    Producer = {p1}
+    Consumer = {c1} 
+    QueueSize = 2
+    QueueTTL = 4
+makes the systems successful
+
+Status
+Checking ProducerConsumer.tla / ProducerConsumer.cfg
+Success Fingerprint collision probability: 4.8E-18
+Start: 23:35:34 (Jan 17), end: 23:35:34 (Jan 17)
